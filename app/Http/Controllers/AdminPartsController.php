@@ -5,12 +5,12 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminVehicle15Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminPartsController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "id";
+			$this->title_field = "name";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
@@ -25,28 +25,31 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "vehicle";
+			$this->table = "parts";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+			$this->col[] = ["label"=>"Nome","name"=>"name"];
 			$this->col[] = ["label"=>"Marca","name"=>"brand"];
-			$this->col[] = ["label"=>"Modelo","name"=>"model"];
-			$this->col[] = ["label"=>"Ano","name"=>"year"];
+			$this->col[] = ["label"=>"Número de peças","name"=>"number"];
+			$this->col[] = ["label"=>"Tipo","name"=>"type"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			$this->form[] = ['label'=>'Nome','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
 			$this->form[] = ['label'=>'Marca','name'=>'brand','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Modelo','name'=>'model','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'Formato: Modelo (ano/modelo)'];
-			$this->form[] = ['label'=>'Ano','name'=>'year','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Número de peças','name'=>'number','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tipos','name'=>'type','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Acessórios e acabemento;Motor;Suspensão;Transmissão;Controle'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
+			//$this->form[] = ['label'=>'Nome','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
 			//$this->form[] = ['label'=>'Marca','name'=>'brand','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Modelo','name'=>'model','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'Formato: Modelo (ano/modelo)'];
-			//$this->form[] = ['label'=>'Ano','name'=>'year','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Número de peças','name'=>'number','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tipos','name'=>'type','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Acessórios e acabemento;Motor;Suspenção;Transmissão;Controle'];
 			# OLD END FORM
 
 			/* 
