@@ -35,6 +35,7 @@
 			$this->col[] = ["label"=>"CPF","name"=>"cpf"];
 			$this->col[] = ["label"=>"E-mail","name"=>"email"];
 			$this->col[] = ["label"=>"Telefone","name"=>"phone"];
+			$this->col[] = ["label"=>"Especialidade","name"=>"role"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -58,7 +59,7 @@
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Nome','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			//$this->form[] = ['label'=>'RG','name'=>'rg','type'=>'text','validation'=>'required|min:9|max:11','width'=>'col-sm-10','help'=>'Digite em um dos formatos: XX.XXX.XXX ou XX.XXX.XXX-X'];
+			//$this->form[] = ['label'=>'RG','name'=>'rg','type'=>'text','validation'=>'required|min:9|max:12','width'=>'col-sm-10','help'=>'Digite em um dos formatos: XX.XXX.XXX ou XX.XXX.XXX-X'];
 			//$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:14|max:14','width'=>'col-sm-10','help'=>'Digite no formato XXX.XXX.XXX-XX'];
 			//$this->form[] = ['label'=>'Rua','name'=>'street','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Número','name'=>'number','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
